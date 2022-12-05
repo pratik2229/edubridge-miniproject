@@ -50,66 +50,70 @@ public class project
                 Library l = new Library();
                 l.exit();
             }
-
     }
 }
 class Library {
-    static String str1, i_date, rdate;
+    static String str1, i_date, rdate,author;
     static int bookId, book_issued;
 
     void add() {                //add method to add books in library
-        System.out.println("Enter a book name, prize, and book_no");
+        System.out.println("Enter a book name,author,prize name and book_no");
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
+        String author = sc.nextLine();
         int price = sc.nextInt();
         int book_no = sc.nextInt();
-        System.out.println("Detail is: " + str  +price  +book_no);
+
+        System.out.println("Detail is: ");
+        System.out.println("Book Name = "+ str);
+        System.out.println("Author name = "+author);
+        System.out.println("price = "+price );
+        System.out.println("Book no. = "+book_no);
     }
 
     void issue() {            //issue method to issue books for a coustomer
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Book Name");
-        String str1 = sc1.nextLine();
+        str1 = sc1.nextLine();
         System.out.println("Book_Id");
         bookId = sc1.nextInt();
         sc1.nextLine();
-        System.out.println("Issue Date");
-        i_date = sc1.nextLine();
-        ;
+        System.out.println("Author name");
+        author = sc1.nextLine();
         System.out.println(" Total book Issued");
         book_issued = sc1.nextInt();
         sc1.nextLine();
+        System.out.println("Issue Date");
+        i_date = sc1.nextLine();
         System.out.println("Return Date");
-        String rdate = sc1.nextLine();
+        rdate = sc1.nextLine();
 
     }
 
-    int getid() {
-        return bookId;
-    }
 
     void returnbook() {                    //returnbook method keep the entries of returned book
         System.out.println("Enter Student name and book id");
         Scanner sc3 = new Scanner(System.in);
-        String name = sc3.nextLine();
-        int sbook_id = sc3.nextInt();
-        if (bookId == sbook_id) {
+        //String name = sc3.nextLine();
+        int rbook_id = sc3.nextInt();
+        if (bookId == rbook_id) {
             System.out.println("Total Details");
             System.out.println("Book Name: " + Library.str1);
             System.out.println("Book_Id: " + Library.bookId);
-            System.out.println("Issue Date: " + Library.i_date);
             System.out.println("Total book issued: " + Library.book_issued);
+            System.out.println("Issue Date: " + Library.i_date);
             System.out.println("Return Date : " + Library.rdate);
         } else {
             System.out.println("Please enter correct id");
         }
     }
 
-    void details() {            //details method will print all the details po book
+    void details() {            //details method will print all the details of book
         System.out.println("Book Name: " + Library.str1);
         System.out.println("Book_Id: " + Library.bookId);
-        System.out.println("Issue Date: " + Library.i_date);
+        System.out.println("Authoe name: " + Library.author);
         System.out.println("Total book issued: " + Library.book_issued);
+        System.out.println("Issue Date: " + Library.i_date);
         System.out.println("Return Date : " + Library.rdate);
     }
 
