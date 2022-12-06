@@ -64,7 +64,8 @@ class Library
 {                 //clas library contains some method
     static String st_name,ibook,abook,i_date, rdate,author;
     static int bookId, book_issued,price,book_no,total_price;
-
+//try to perform association
+    //see at the bottom
     void add()
     {                //add method to add books in library
         System.out.println("Enter a book name,author name,prize and book_no. ");
@@ -73,7 +74,8 @@ class Library
         author = sc.nextLine();
         price = sc.nextInt();
         book_no = sc.nextInt();
-
+        //create a arraylist of library type and add the book into the collection
+        //main functionality is missing
         System.out.println("Book added successfully ");
     }
 
@@ -99,7 +101,7 @@ class Library
         i_date = sc1.nextLine();
         System.out.println("Return Date");
         rdate = sc1.nextLine();
-
+ //main functionality is missing
     }
 
     void returnbook()
@@ -120,6 +122,8 @@ class Library
         else {
             System.out.println("Please enter correct id");
              }
+        
+         //main functionality is missing
     }
 
     void details()
@@ -153,4 +157,27 @@ class Library
         System.exit(0);
     }
 
+}
+class Book
+{
+    int bookId;bookPrice;
+    String bookName,bookAuthor;
+    String issueDate,returnDate;
+    int fine;
+    String status;//Active, Issued
+    Book(int bookId,int bookPrice,String bookName,String bookAuthor)
+    {
+        this.bookId=bookId;
+        this.bookPrice=bookPrice;
+        this.bookName=bookName;
+        this.bookAuthor=bookAuthor;
+    }
+}
+class Student
+{
+    int sId;
+    String sName;
+    LinkedHashSet<Book> bookList;
+    
+    
 }
